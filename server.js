@@ -40,7 +40,7 @@ app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) })
 app.post('/register', (req,res) => { register.handleRegister(req, res, db, bcrypt) })
 
 
-app.listen(2000, ()=>{
+app.listen(process.e, ()=>{
 	console.log('App is running at port 2000');
 })
 
