@@ -25,9 +25,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.get('/', (req,res)=>{
-	res.send(database.users);
-})
+app.get('/', (req,res)=> res.send('It is Working'))
 
 app.post('/signin', (req,res) => { signin.handleSignIn(req, res, db, bcrypt) })
 
@@ -40,8 +38,8 @@ app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) })
 app.post('/register', (req,res) => { register.handleRegister(req, res, db, bcrypt) })
 
 
-app.listen(process.e, ()=>{
-	console.log('App is running at port 2000');
+app.listen(process.env.PORT || 2000, ()=>{
+	console.log(`App is running at port ${process.env.PORT}`);
 })
 
 
